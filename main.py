@@ -27,5 +27,7 @@ loader  = transforms.Compose([transforms.ToTensor(),
 
 vgg = vgg19().to(device)
 img = image_loader(args.image_path)
+
 vgg_features = vgg(img)
 feature = getattr(vgg_features, args.feature_layer)
+

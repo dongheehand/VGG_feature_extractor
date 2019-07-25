@@ -3,6 +3,7 @@ from collections import namedtuple
 import torch
 import torch.nn as nn
 
+
 class vgg19(nn.Module):
     
     def __init__(self, pre_trained = True, require_grad = False):
@@ -17,7 +18,7 @@ class vgg19(nn.Module):
         
         if not require_grad:
             for parameter in self.parameters():
-                parameter.require_grad = False
+                parameter.requires_grad = False
         
     def forward(self, x):
         
@@ -75,3 +76,4 @@ class vgg19(nn.Module):
         
         
         return out
+        
